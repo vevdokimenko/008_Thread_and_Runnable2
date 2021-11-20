@@ -9,7 +9,7 @@ package practice;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int[] array = new int[1000];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 10000);
@@ -21,6 +21,9 @@ public class Main {
 
         MinThread minThread = new MinThread(array);
         minThread.start();
+
+        maxThread.join();
+        minThread.join();
     }
 }
 
