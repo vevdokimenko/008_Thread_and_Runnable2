@@ -8,16 +8,16 @@ package homework;
 
 public class Task3 {
     public static void main(String[] args) {
-        Job job = new Job();
-        Thread vasya = new Thread(job, "Вася");
-        Thread sasha = new Thread(job, "Саша");
+        Handmade handmade = new Handmade();
+        Thread vasya = new Thread(handmade, "Вася");
+        Thread sasha = new Thread(handmade, "Саша");
 
         vasya.start();
         sasha.start();
     }
 }
 
-class Job implements Runnable {
+class Handmade implements Runnable {
     private final Object scissors = new Object();
     private final Object paper = new Object();
 
